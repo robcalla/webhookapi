@@ -1,0 +1,19 @@
+{
+  "name": "webhook",
+  "version": "1.0.0",
+  "description": "google assistant webhook",
+  "main": "callWebhook.js",
+  "scripts": {
+    "test": "node test-pipedream.js",
+    "start": "node callWebhook.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "xhr2": "^0.2.1"
+  }
+}
