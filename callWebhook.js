@@ -16,7 +16,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.post('/webhook', (req, res) => {
+app.post('/test-api/webhook', (req, res) => {
     const webhook = req.body;
 
     console.log(webhook);
@@ -44,7 +44,7 @@ async function callEvita(talk) {
     return  res.data;
 }
 
-app.get('/webhooks', (req, res) => {
+app.get('/test-api/webhooks', (req, res) => {
     res.json(webhooks);
 });
 
