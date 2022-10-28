@@ -34,7 +34,7 @@ async function callEvita(talk) {
         method: 'post',
         url: 'https://manager.evita.digital-enabler.eng.it/api/devices/send_data?deviceId=62cffa7ee50c9d08f994ec5f&deviceToken=4cd34f81-26cf-4b62-bf64-df9f251982db',
         headers: { 'Content-Type': 'application/json' },
-        body:JSON.stringify({"message": talk})
+        data:JSON.stringify({"message": talk})
     }
 
     let res = await axios(config);
