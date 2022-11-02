@@ -30,9 +30,13 @@ app.post('/test-api/webhook', (req, res) => {
 
 async function callEvita(talk) {
 
+    const testUrl = "https://evita-test.opsilab.it/api/devices/send_data?deviceId=636249c7cbd19b5628c98deb&deviceToken=57fdde32-4e4f-4199-ba2f-34e3fe1c9991"
+
+    const evitaUrl = "https://evita-test.opsilab.it/api/devices/send_data?deviceId=636249c7cbd19b5628c98deb&deviceToken=57fdde32-4e4f-4199-ba2f-34e3fe1c9991"
+
     const config = {
         method: 'post',
-        url: 'https://manager.evita.digital-enabler.eng.it/api/devices/send_data?deviceId=62cffa7ee50c9d08f994ec5f&deviceToken=4cd34f81-26cf-4b62-bf64-df9f251982db',
+        url: testUrl,
         headers: { 'Content-Type': 'application/json' },
         data:JSON.stringify({"message": talk})
     }
