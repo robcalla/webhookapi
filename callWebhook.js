@@ -16,13 +16,13 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.post('/test-api/webhook', (req, res) => {
+app.post('/test-api/webhook', async (req, res) => {
     const webhook = req.body;
 
     console.log(webhook);
     webhooks.push(webhook);
 
-    eVitaResponse=callEvita(webhook.intent.query);
+    eVitaResponse= await callEvita(webhook.intent.query);
     
     res.send(eVitaResponse);
 
