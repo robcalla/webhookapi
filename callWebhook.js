@@ -47,7 +47,8 @@ async function callEvita(talk) {
 
     let textResponse = "";
     res.data.forEach(x=>{
-        textResponse+=x['text']+" ";
+        if(x['text']!=undefined)
+            textResponse+=x['text']+" ";
     })
 
     let output={
