@@ -52,7 +52,6 @@ async function callEvita(talk) {
     })
 
     let output={
-        "responseJson": {
             "prompt": {
                 "override": false,
                 "firstSimple": {
@@ -60,7 +59,7 @@ async function callEvita(talk) {
                     "text": textResponse
                 },
             }
-        }
+        
     }
 
     return  output;
