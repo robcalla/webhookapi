@@ -22,7 +22,7 @@ app.post('/test-api/webhook', async (req, res) => {
     console.log(webhook);
     webhooks.push(webhook);
 
-    eVitaResponse= await callEvita(webhook.intent.query);
+    eVitaResponse = await callEvita(webhook.intent.query);
     
     res.send(eVitaResponse);
 
@@ -45,7 +45,24 @@ async function callEvita(talk) {
 
     console.log(res.data);
 
-    return  res.data;
+    let textResponse = "";
+    res.data.forEach(x=>{
+        textResponse+=x['text']+" ";
+    })
+
+    let output={
+        "responseJson": {
+            "prompt": {
+                "override": false,
+                "firstSimple": {
+                    "speech": textResponse,
+                    "text": textResponse
+                },
+            }
+        }
+    }
+
+    return  output;
 }
 
 app.get('/test-api/webhooks', (req, res) => {
