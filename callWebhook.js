@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 app.post('/test-api/webhook', async (req, res) => {
     const webhook = req.body;
 
+    console.log(req.headers)
     console.log(webhook);
     webhooks.push(webhook);
 
