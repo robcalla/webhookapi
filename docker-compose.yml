@@ -1,0 +1,13 @@
+
+version: "3.1"
+
+services:
+
+  evita-webhook-api:
+    image: evita-webhook-api
+    build:
+      context: .
+    container_name: "evita-webhook-api"
+    restart: always
+    ports:
+      - "3000:3000"
