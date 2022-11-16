@@ -23,7 +23,7 @@ app.post('/test-api/webhook', async (req, res) => {
     console.log(webhook);
     webhooks.push(webhook);
 
-    eVitaResponse = await callEvita(webhook.intent.query);
+    eVitaResponse = await callEvita(webhook.intent.originalQuery);
     
     res.send(eVitaResponse);
 
